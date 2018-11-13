@@ -8,8 +8,11 @@ import com.lmax.disruptor.util.DaemonThreadFactory;
 import lmax.example.event.EventWrapper;
 import lmax.example.event.GoodbyeEvent;
 import lmax.example.event.HelloEvent;
+import lmax.example.handler.AlohaEventHandler;
 import lmax.example.handler.GoodbyeEventHandler;
 import lmax.example.handler.HelloEventHandler;
+
+import java.util.concurrent.CountDownLatch;
 
 public class Main {
 
@@ -18,7 +21,9 @@ public class Main {
         Disruptor<EventWrapper> disruptor = new Disruptor<EventWrapper>(EventWrapper.EVENT_FACTORY,
                 1024, DaemonThreadFactory.INSTANCE, ProducerType.SINGLE, new BusySpinWaitStrategy());
 
-        disruptor.handleEventsWith(new HelloEventHandler(), new GoodbyeEventHandler());
+        disruptor.handleEventsWith(new HelloEventHandler(),
+                new GoodbyeEventHandler(),
+                new AlohaEventHandler());
 
         RingBuffer<EventWrapper> ringBuffer = disruptor.start();
 
@@ -36,7 +41,6 @@ public class Main {
                 eventWrapper.setType(event.getType());
                 eventWrapper.setEvent(event);
             }
-
 
             ringBuffer.publish(seqId);
         }

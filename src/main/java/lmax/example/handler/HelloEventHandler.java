@@ -5,6 +5,9 @@ import lmax.example.event.EventType;
 import lmax.example.event.EventWrapper;
 import lmax.example.event.HelloEvent;
 
+/**
+ * Event handler for {@link HelloEvent}.
+ */
 public class HelloEventHandler implements EventHandler<EventWrapper> {
 
     @Override

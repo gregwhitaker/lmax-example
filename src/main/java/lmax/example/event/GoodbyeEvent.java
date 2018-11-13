@@ -1,5 +1,8 @@
 package lmax.example.event;
 
+/**
+ * Event that passes the data needed for the {@link lmax.example.handler.GoodbyeEventHandler}.
+ */
 public class GoodbyeEvent implements Event {
 
     private String name;

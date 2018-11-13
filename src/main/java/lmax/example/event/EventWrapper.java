@@ -2,6 +2,9 @@ package lmax.example.event;
 
 import com.lmax.disruptor.EventFactory;
 
+/**
+ * Wrapper class that allows events of different types to be used on the same disruptor.
+ */
 public class EventWrapper {
     public final static EventFactory EVENT_FACTORY = EventWrapper::new;
 

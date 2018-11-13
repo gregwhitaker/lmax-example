@@ -1,5 +1,8 @@
 package lmax.example.event;
 
+/**
+ * Enumeration of all of the supported event types in the application.
+ */
 public enum EventType {
 
     HELLO(1),
