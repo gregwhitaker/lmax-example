@@ -1,6 +1,11 @@
 # lmax-example
 A simple example of using the [LMAX Disruptor](https://lmax-exchange.github.io/disruptor/) with multiple event types.
 
+## Running the Example
+Run the following command to start the example application:
+
+    ./gradlew run
+
 ## Bugs and Feedback
 For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/lmax-example/issues).
 
