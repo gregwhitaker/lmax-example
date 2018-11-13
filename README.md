@@ -1,7 +1,8 @@
 # lmax-example
-A simple example of using the [LMAX Disruptor](https://lmax-exchange.github.io/disruptor/).
+A simple example of using the [LMAX Disruptor](https://lmax-exchange.github.io/disruptor/) with multiple event types.
 
-
+## Bugs and Feedback
+For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/lmax-example/issues).
 
 ## License
 MIT License
