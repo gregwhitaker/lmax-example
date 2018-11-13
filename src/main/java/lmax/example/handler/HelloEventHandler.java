@@ -1,12 +1,16 @@
 package lmax.example.handler;
 
 import com.lmax.disruptor.EventHandler;
+import lmax.example.event.EventType;
+import lmax.example.event.EventWrapper;
 import lmax.example.event.HelloEvent;
 
-public class HelloEventHandler implements EventHandler<HelloEvent> {
+public class HelloEventHandler implements EventHandler<EventWrapper> {
 
     @Override
-    public void onEvent(HelloEvent event, long sequence, boolean endOfBatch) throws Exception {
-        System.out.println(String.format("Hello, %s!", event.getName()));
+    public void onEvent(EventWrapper event, long sequence, boolean endOfBatch) throws Exception {
+        if (event.getType() == EventType.HELLO.getCode()) {
+            System.out.println(String.format("Hello, %s!", ((HelloEvent) event.getEvent()).getName()));
+        }
     }
 }

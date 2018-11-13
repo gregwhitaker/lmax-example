@@ -1,10 +1,10 @@
 package lmax.example.event;
 
-public class HelloEvent implements Event {
+public class GoodbyeEvent implements Event {
 
     private String name;
 
-    public HelloEvent(String name) {
+    public GoodbyeEvent(String name) {
         this.name = name;
     }
 
@@ -14,6 +14,6 @@ public class HelloEvent implements Event {
 
     @Override
     public int getType() {
-        return EventType.HELLO.getCode();
+        return EventType.GOODBYE.getCode();
     }
 }
