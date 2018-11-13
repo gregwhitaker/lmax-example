@@ -12,8 +12,9 @@ import lmax.example.handler.AlohaEventHandler;
 import lmax.example.handler.GoodbyeEventHandler;
 import lmax.example.handler.HelloEventHandler;
 
-import java.util.concurrent.CountDownLatch;
-
+/**
+ * Starts the lmax-example application.
+ */
 public class Main {
 
     public static void main(String... args) throws Exception {
